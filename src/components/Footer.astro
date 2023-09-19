@@ -1,0 +1,75 @@
+---
+import {Image} from "astro:assets";
+import {SITE_DATA, THEMES} from "@/consts";
+import logo from '@/static/logo.png';
+
+import Link from "./Link.astro";
+import Github from "./icons/Github.astro";
+import Discord from "./icons/Discord.astro";
+import Twitter from "./icons/Twitter.astro";
+---
+
+<footer aria-labelledby="footer-heading" class="bg-gray-900">
+    <h2 class="sr-only" id="footer-heading">Footer</h2>
+    <div class="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
+        <div class="xl:grid xl:grid-cols-3 xl:gap-8">
+            <div class="space-y-8">
+                <Image alt={SITE_DATA.shortName} class="h-10 w-10" width="40px" src={logo}/>
+                <p class="text-sm leading-6 text-gray-300">{SITE_DATA.shortDescription}</p>
+                <div class="flex space-x-6">
+                    <Link class="hover:opacity-80" href={SITE_DATA.twitterUrl}>
+                        <span class="sr-only">Twitter</span>
+                        <Twitter class="h-6 w-6"/>
+                    </Link>
+
+                    <Link class="hover:opacity-80" href={SITE_DATA.githubUrl}>
+                        <span class="sr-only">GitHub</span>
+                        <Github class="h-6 w-6"/>
+                    </Link>
+
+                    <Link class="hover:opacity-80" href={SITE_DATA.discordUrl}>
+                        <span class="sr-only">Discord</span>
+                        <Discord class="h-6 w-6"/>
+                    </Link>
+                </div>
+            </div>
+            <div class="mt-16 grid grid-cols-3 gap-8 xl:col-span-2 xl:mt-0">
+                <div class="mt-10 md:mt-0">
+                    <h3 class="text-sm font-semibold leading-6 text-white">Support</h3>
+                    <ul class="mt-6 space-y-4" role="list">
+                        <li>
+                            <Link class="text-sm leading-6" href={SITE_DATA.docsUrl}>Documentation</Link>
+                        </li>
+                        <li>
+                            <Link class="text-sm leading-6" href={SITE_DATA.npmUrl}>NPM Repository</Link>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-sm font-semibold leading-6 text-white">Pre-built Themes</h3>
+                    <ul class="mt-6 space-y-4" role="list">
+                        {THEMES.map(({demoUrl, shortName}) => (
+                                <li>
+                                    <Link class="text-sm leading-6" href={demoUrl}>
+                                        {shortName}
+                                    </Link>
+                                </li>
+                        ))}
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold leading-6 text-white">Company</h3>
+                    <ul class="mt-6 space-y-4" role="list">
+                        <li>
+                            <Link class="text-sm leading-6" href="https://ngcomma.io">About</Link>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="mt-16 border-t border-white/10 pt-8 sm:mt-20 lg:mt-24">
+            <p class="text-xs leading-5 text-gray-400">&copy; 2023 NgComma LTD, All rights reserved.</p>
+        </div>
+    </div>
+</footer>
