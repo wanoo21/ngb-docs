@@ -5,11 +5,11 @@ import Footer from "../components/Footer.astro";
 import favicon from "@/static/logo-60.png";
 
 interface Props {
-  title: string;
-  description: string;
+  title?: string;
+  description?: string;
 }
 
-const {shortName, baseUrl, twitterUrl, ogImage} = SITE_DATA;
+const {shortName, twitterUrl, ogImage} = SITE_DATA;
 
 const {title = SITE_DATA.title, description = SITE_DATA.description} = Astro.props;
 const canonical = new URL(Astro.request.url, Astro.url);
@@ -29,20 +29,20 @@ const canonical = new URL(Astro.request.url, Astro.url);
     <meta content={title} property="og:title"/>
     <meta content={description} property="og:description"/>
     <meta content=`${Astro.url}/` property="og:url"/>
-    <meta content=`${baseUrl}/${ogImage}` property="og:image"/>
+    <meta content=`${Astro.url}/${ogImage}` property="og:image"/>
     <meta content={twitterUrl} property="article:publisher"/>
     <meta content="summary_large_image" name="twitter:card"/>
     <meta content={title} name="twitter:title"/>
     <meta content={description} name="twitter:description"/>
-    <meta content=`${baseUrl}/` name="twitter:url"/>
-    <meta content=`${baseUrl}/${ogImage}` name="twitter:image"/>
+    <meta content=`${Astro.url}/` name="twitter:url"/>
+    <meta content=`${Astro.url}/${ogImage}` name="twitter:image"/>
     <meta content="@NgbEmail" name="twitter:site"/>
     <meta content="1280" property="og:image:width"/>
     <meta content="720" property="og:image:height"/>
 
     <!--<link href="/src/style.css" rel="stylesheet"/>-->
     <link href="/manifest.json" rel="manifest"/>
-    <link content={canonical.toString()} rel="canonical">
+    <link href={canonical.toString()} rel="canonical">
 </head>
 <body class="bg-base-100 text-base-content">
 <Header/>

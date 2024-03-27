@@ -15,7 +15,7 @@ import Link from "./Link.astro";
             </p>
         </div>
         <div class="mx-auto lg:mx-0 grid grid-cols-1 lg:grid-cols-2 mt-14 gap-14">
-          {THEMES.map(({description, docsUrl, logo, logoAlt, name, demoUrl}) => (
+          {THEMES.map(({description, logo, logoAlt, name, demoUrl}) => (
                   <div class="flex-1 flex flex-col lg:gap-4">
                       <h3 class="capitalize lg:text-2xl text-xl">
                           <img alt={logoAlt} title={logoAlt} class="lg:inline-block h-8 w-8 hidden" src={logo}>
@@ -27,12 +27,6 @@ import Link from "./Link.astro";
                           <Link class="text-opacity-80 hover:text-opacity-100" href={demoUrl}>
                               Demonstration
                           </Link>
-                        {docsUrl && (
-                                <Link class="text-opacity-80 hover:text-opacity-100"
-                                      href={`${SITE_DATA.docsUrl}${docsUrl}`}>
-                                    Get Started Guide
-                                </Link>
-                        )}
                       </div>
                   </div>
           ))}
