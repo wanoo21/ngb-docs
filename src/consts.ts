@@ -1,5 +1,5 @@
 export const SITE_DATA = {
-    title: 'An Open source Angular Email Template Builder (former wlocalhost)',
+    title: 'Free Angular Email Template Builder (former wlocalhost)',
     description: 'Powerful Angular Library for Creating Customizable Email Builders, now open source.',
     shortDescription: 'Powerful Angular Library for Creating Customizable Email Builders',
     slogan: 'Made by Developers, for Developers',
