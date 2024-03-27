@@ -1,11 +1,10 @@
 export const SITE_DATA = {
-    title: 'Angular Email Template Builder, now (open source)',
-    description: 'Explore NGB Email Builder, an Angular library for devs & SaaS startups. Build responsive email templates with drag-and-drop, custom blocks, content API, and export as HTML or MJML.',
+    title: 'An Open source Angular Email Template Builder (former wlocalhost)',
+    description: 'Powerful Angular Library for Creating Customizable Email Builders, now open source.',
     shortDescription: 'Powerful Angular Library for Creating Customizable Email Builders',
     slogan: 'Made by Developers, for Developers',
 
 
-    docsUrl: 'https://docs.ngb.email',
     twitterUrl: 'https://twitter.com/NgbEmail',
     discordUrl: 'https://discord.gg/S6Yx6yNZSG',
     // affiliateUrl: 'https://wlocalhost.gumroad.com/affiliates',
