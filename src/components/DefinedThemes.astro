@@ -1,0 +1,55 @@
+---
+import Link from "./Link.astro";
+import {Icon} from "@astrojs/starlight/components";
+import {allThemes} from "../themes";
+---
+
+<section class="py-20" id="themes" class:list={Astro.props.class}>
+    <div class="mx-auto max-w-7xl px-6 lg:px-8 flex flex-col gap-10 w-full">
+        <div class="text-center">
+            <h2 class="text-base font-semibold leading-7 text-primary capitalize">
+                Themes
+            </h2>
+            <p class="mt-2 text-3xl font-bold tracking-tight sm:text-4xl capitalize">
+                Beautiful and functional templates
+            </p>
+            <p class="mt-6 text-lg leading-8">
+                We have a wide range of templates that are easy to use and customize. Our templates are designed to look great on all devices and are easy to integrate and manage.
+            </p>
+        </div>
+        <div class="flex flex-wrap gap-4 justify-center">
+            {allThemes().splice(8).map((theme) => (
+              <div class="bg-base-100 shadow-lg rounded-lg overflow-hidden min-w-72 border h-96">
+                  <div class="relative">
+                      <img class="w-full h-96 object-cover object-top" src={theme.url} alt="" />
+                      <div class="absolute top-0 right-0 bg-primary text-white px-3 py-1 rounded-bl-lg">
+                          Free
+                      </div>
+                  <div class="p-6 absolute bottom-0 bg-base-100/90 left-0 right-0">
+                      <h3 class="text-xl font-semibold leading-7 text-primary capitalize">
+                          {theme.category}
+                      </h3>
+                      <!--<div class="mt-4 flex items-center justify-between">-->
+                      <!--    <Link href={`/themes/${theme.slug}`} class="text-primary hover:text-primary-dark">-->
+                      <!--        View Details-->
+                      <!--    </Link>-->
+                      <!--    <Link href={theme.demo} class="text-primary hover:text-primary-dark">-->
+                      <!--        <Icon name="information" class="w-6 h-6" />-->
+                      <!--    </Link>-->
+                      <!--</div>-->
+                  </div>
+                  </div>
+              </div>
+            ))}
+        </div>
+        <!--<div class="text-center mt-10">-->
+        <!--    <Link href="/themes" class="text-primary hover:text-primary-dark">-->
+        <!--        View all themes-->
+        <!--    </Link>-->
+        <!--</div>-->
+
+        <p class="mt-6 text-lg leading-8">
+            And yet, more to come! Stay tuned for more themes and updates. We are constantly working on new themes and updates to make your experience better. If you have any suggestions or feedback, feel free to reach out to us.
+        </p>
+    </div>
+</section>

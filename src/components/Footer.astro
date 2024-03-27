@@ -1,59 +1,28 @@
 ---
-import {Image} from "astro:assets";
-import {SITE_DATA, THEMES} from "@/consts";
-import logo from '@/static/logo-160.png';
-
+import {SITE_DATA} from "@/consts";
+import {Icon} from "@astrojs/starlight/components";
 import Link from "./Link.astro";
-import Github from "./icons/Github.astro";
-import Discord from "./icons/Discord.astro";
-import Twitter from "./icons/Twitter.astro";
 ---
 
-<footer aria-labelledby="footer-heading" class="bg-white dark:bg-gray-900">
-    <h2 class="sr-only" id="footer-heading">Footer</h2>
-    <div class="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
-        <div class="xl:grid xl:grid-cols-3 xl:gap-8">
-            <div class="space-y-8">
-                <Image alt={SITE_DATA.shortName} class="h-10 w-10" widths={[80, 160]} src={logo}/>
-                <p class="text-sm leading-6">{SITE_DATA.shortDescription}</p>
-                <div class="flex space-x-6">
-                    <Link class="hover:opacity-80" href={SITE_DATA.twitterUrl}>
-                        <span class="sr-only">Twitter</span>
-                        <Twitter class="h-6 w-6"/>
-                    </Link>
-
-                    <Link class="hover:opacity-80" href={SITE_DATA.githubUrl}>
-                        <span class="sr-only">GitHub</span>
-                        <Github class="h-6 w-6"/>
-                    </Link>
-
-                    <Link class="hover:opacity-80" href={SITE_DATA.discordUrl}>
-                        <span class="sr-only">Discord</span>
-                        <Discord class="h-6 w-6"/>
-                    </Link>
-                </div>
-            </div>
-            <div class="mt-16 grid grid-cols-3 gap-8 xl:col-span-2 xl:mt-0">
-                <div class="mt-10 md:mt-0">
-                    <h3 class="text-sm font-semibold leading-6">Support</h3>
-                    <ul class="mt-6 space-y-4" role="list">
-                        <li>
-                            <Link class="text-sm leading-6" href={SITE_DATA.npmUrl}>NPM Repository</Link>
-                        </li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-sm font-semibold leading-6">Company</h3>
-                    <ul class="mt-6 space-y-4" role="list">
-                        <li>
-                            <Link class="text-sm leading-6" href="https://ngcomma.io">About</Link>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+<footer class="footer footer-center p-10 bg-primary text-primary-content rounded">
+    <nav class="grid grid-flow-col gap-4">
+        <Link class="link link-hover">About us</Link>
+        <Link class="link link-hover" href="mailto:me@yon.fun">Contact</Link>
+    </nav>
+    <nav>
+        <div class="grid grid-flow-col gap-4">
+            <Link class="link link-hover" href={SITE_DATA.twitterUrl}>
+                <Icon name="x.com" class="w-6 h-6"/>
+            </Link>
+            <Link class="link link-hover" href={SITE_DATA.githubUrl}>
+                <Icon name="github" class="w-6 h-6"/>
+            </Link>
+            <Link class="link link-hover" href={SITE_DATA.discordUrl}>
+                <Icon name="discord" class="w-6 h-6"/>
+            </Link>
         </div>
-        <div class="mt-16 border-t border-white/10 dark:border-gray-300/10 pt-8 sm:mt-20 lg:mt-24">
-            <p class="text-xs leading-5">&copy; 2023 NgComma LTD, All rights reserved.</p>
-        </div>
-    </div>
+    </nav>
+    <aside>
+        <p>&copy; 2023 NgComma LTD, All rights reserved. Part of <a href="https://yon.fun">Yon.fun</a> Network.</p>
+    </aside>
 </footer>

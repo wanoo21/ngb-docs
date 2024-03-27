@@ -2,11 +2,16 @@
 import MainLayout from "../layouts/MainLayout.astro";
 import Hero from "../components/Hero.astro";
 import Features from "../components/Features.astro";
-import Themes from "../components/Themes.astro";
+import DefinedThemes from "../components/DefinedThemes.astro";
 ---
 
-<MainLayout>
+<MainLayout class="divide-y">
     <Hero/>
     <Features/>
-    <Themes/>
+    <DefinedThemes class="bg-base-200"/>
+    <section class="p-4 text-center">
+        <p>
+            This page is still under construction. Please check back later.
+        </p>
+    </section>
 </MainLayout>

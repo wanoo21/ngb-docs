@@ -1,34 +1,87 @@
 ---
-import {FEATURES} from '../consts';
+import Link from "./Link.astro";
+import {Icon} from "@astrojs/starlight/components";
 ---
 
-<section class="bg-white dark:bg-gray-900 py-20" id="features">
-    <div class="mx-auto max-w-7xl px-6 lg:px-8">
-        <div class="mx-auto max-w-2xl lg:text-center">
+<section class="bg-base-100 py-20" id="features">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8 flex flex-col gap-10 w-full">
+        <div>
             <h2 class="text-base font-semibold leading-7 text-primary capitalize">
-                Revolutionize Your Email Designs with Powerful Features
+                Blocks
             </h2>
             <p class="mt-2 text-3xl font-bold tracking-tight sm:text-4xl capitalize">
-                Without the hassle
+                All the blocks you need
             </p>
             <p class="mt-6 text-lg leading-8">
-                Unlock the Full Potential of Your Email Templates with NGB Email Builder's Versatile Capabilities
+                We have created a <Link class="link link-primary" href="/guides/default-blocks/">set of blocks</Link> that are beautiful and functional. These blocks can be used to create a
+                beautiful email template. Each block has been carefully designed to look great on all devices and screen sizes.
             </p>
         </div>
-        <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
-            <dl class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
-                {FEATURES.map(({name, description, icon}) => (
-                        <div class="flex flex-col">
-                            <dt class="flex items-center gap-x-3 text-base font-semibold leading-7 light:text-gray-900 dark:opacity-80">
-                                <Fragment set:html={icon}></Fragment>
-                                {name}
-                            </dt>
-                            <dd class="mt-4 flex flex-auto flex-col text-base leading-7 light:text-gray-600 dark:opacity-80">
-                                <p class="flex-auto">{description}</p>
-                            </dd>
-                        </div>
-                ))}
-            </dl>
+        <div class="flex-wrap gap-14 justify-between hidden lg:flex">
+            <Link href="/guides/default-blocks/text-block" class="btn btn-lg btn-circle btn-link tooltip" data-tip="Text">
+                <Icon name="seti:default" class="w-16 h-16" />
+            </Link>
+            <Link href="/guides/default-blocks/image-block" class="btn btn-lg btn-circle btn-link tooltip" data-tip="Image">
+                <Icon name="seti:image" class="w-16 h-16" />
+            </Link>
+            <Link href="/guides/default-blocks/button-block" class="btn btn-lg btn-circle btn-link tooltip" data-tip="Button">
+                <Icon name="external" class="w-16 h-16" />
+            </Link>
+            <Link href="/guides/default-blocks/spacer-block" class="btn btn-lg btn-circle btn-link tooltip" data-tip="Spacer">
+                <Icon name="bars" class="w-16 h-16" />
+            </Link>
+            <Link href="/guides/default-blocks/social-block" class="btn btn-lg btn-circle btn-link tooltip" data-tip="Social">
+                <Icon name="instagram" class="w-16 h-16" />
+            </Link>
+            <Link href="/guides/default-blocks/divider-block" class="btn btn-lg btn-circle btn-link tooltip" data-tip="Divider">
+                <Icon name="gitter" class="w-16 h-16" />
+            </Link>
+            <Link href="/guides/default-blocks/navigation-block" class="btn btn-lg btn-circle btn-link tooltip" data-tip="Navigation">
+                <Icon name="seti:json" class="w-16 h-16" />
+            </Link>
+            <Link href="/guides/default-blocks/html" class="btn btn-lg btn-circle btn-link tooltip" data-tip="HTML">
+                <Icon name="seti:html" class="w-16 h-16" />
+            </Link>
+            <!--<div class="flex flex-col gap-6">-->
+            <!--    <div class="flex gap-4 items-center">-->
+            <!--        <div class="w-12 h-12 bg-primary bg-opacity-10 rounded-full flex items-center justify-center">-->
+            <!--            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">-->
+            <!--                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>-->
+            <!--            </svg>-->
+            <!--        </div>-->
+            <!--        <div>-->
+            <!--            <h3 class="text-xl font-bold">Responsive</h3>-->
+            <!--            <p class="text-lg leading-7">Our blocks are designed to look great on all devices and screen sizes.</p>-->
+            <!--        </div>-->
+            <!--    </div>-->
+            <!--    <div class="flex gap-4 items-center">-->
+            <!--        <div class="w-12 h-12 bg-primary bg-opacity-10 rounded-full flex items-center justify-center">-->
+            <!--            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">-->
+            <!--                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>-->
+            <!--            </svg>-->
+            <!--        </div>-->
+            <!--        <div>-->
+            <!--            <h3 class="text-xl font-bold">Customizable</h3>-->
+            <!--            <p class="text-lg leading-7">Our blocks are fully customizable. You can change the colors, fonts, and more.</p>-->
+            <!--        </div>-->
+            <!--    </div>-->
+            <!--    <div class="flex gap-4 items-center">-->
+            <!--        <div class="w-12 h-12 bg-primary bg-opacity-10 rounded-full flex items-center justify-center">-->
+            <!--            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">-->
+            <!--                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>-->
+            <!--            </svg>-->
+            <!--        </div>-->
+            <!--        <div>-->
+            <!--            <h3 class="text-xl font-bold">Easy to use</h3>-->
+            <!--            <p class="text-lg leading-7">Our blocks are easy to use. You can simply drag and drop them into your email template.</p>-->
+            <!--        </div>-->
+            <!--    </div>-->
+            <!--</div>-->
         </div>
+
+        <p class="lg:mt-6 text-lg leading-8">
+            You can use these blocks to create a beautiful email template in minutes. Simply drag and drop the blocks into your email template and customize them to fit your brand.
+            Oh, and did we mention that you can create your own blocks too? <Link class="link link-primary" href="/guides/blocks/custom-block/">Learn more</Link>.
+        </p>
     </div>
 </section>
