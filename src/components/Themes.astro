@@ -5,7 +5,8 @@ import Link from "./Link.astro";
 <section class="bg-gray-50 dark:bg-gray-950 py-24 sm:py-32">
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
         <div class="mx-auto max-w-2xl lg:mx-0">
-            <h2 class="text-base font-semibold leading-7 text-red-400" id="themes">Master the Art of Email Building With</h2>
+            <h2 class="text-base font-semibold leading-7 text-red-400" id="themes">Master the Art of Email Building
+                With</h2>
             <p class="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
                 The Power of the NGB Email Builder
             </p>
@@ -14,31 +15,33 @@ import Link from "./Link.astro";
             </p>
         </div>
         <div class="mx-auto lg:mx-0 grid grid-cols-1 lg:grid-cols-2 mt-14 gap-14">
-            {THEMES.map(({description, docsUrl, logo, logoAlt, name, demoUrl}) => (
-                    <div class="flex-1 flex flex-col lg:gap-4">
-                        <h3 class="capitalize lg:text-2xl text-xl">
-                            <img alt={logoAlt} title={logoAlt} class="lg:inline-block h-8 w-8 hidden" src={logo}>
-                            <span class="inline-block align-middle mx-2">{name}</span>
-                        </h3>
-                        <p class="font-light text-base" set:html={description}></p>
+          {THEMES.map(({description, docsUrl, logo, logoAlt, name, demoUrl}) => (
+                  <div class="flex-1 flex flex-col lg:gap-4">
+                      <h3 class="capitalize lg:text-2xl text-xl">
+                          <img alt={logoAlt} title={logoAlt} class="lg:inline-block h-8 w-8 hidden" src={logo}>
+                          <span class="inline-block align-middle mx-2">{name}</span>
+                      </h3>
+                      <p class="font-light text-base" set:html={description}></p>
 
-                        <div class="flex flex-col lg:flex-row lg:gap-4 mt-4 lg:items-center">
-                            <Link class="text-opacity-80 hover:text-opacity-100" href={demoUrl}>
-                                Demonstration
-                            </Link>
-                            {docsUrl && (
-                                <Link class="text-opacity-80 hover:text-opacity-100" href={`${SITE_DATA.docsUrl}${docsUrl}`}>
+                      <div class="flex flex-col lg:flex-row lg:gap-4 mt-4 lg:items-center">
+                          <Link class="text-opacity-80 hover:text-opacity-100" href={demoUrl}>
+                              Demonstration
+                          </Link>
+                        {docsUrl && (
+                                <Link class="text-opacity-80 hover:text-opacity-100"
+                                      href={`${SITE_DATA.docsUrl}${docsUrl}`}>
                                     Get Started Guide
                                 </Link>
-                            )}
-                        </div>
-                    </div>
-            ))}
+                        )}
+                      </div>
+                  </div>
+          ))}
         </div>
         <p class="mx-auto lg:mx-0 mt-14 text-lg leading-8">And more templates are coming ... Foundation, Bulma,
             Semantic UI!
             <strong class="font-bold">Maybe other ideas? Let us know in the
-                <Link class="text-red-400 hover:text-red-300" href={SITE_DATA.discordUrl}>Discord channel</Link>.
+                <Link class="text-red-400 hover:text-red-300" href={SITE_DATA.discordUrl}>Discord channel</Link>
+                .
             </strong>
         </p>
     </div>

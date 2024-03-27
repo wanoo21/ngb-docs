@@ -1,53 +1,40 @@
 ---
-import {Prism} from '@astrojs/prism';
-import Github from "./icons/Github.astro";
-import Discord from "./icons/Discord.astro";
-import Twitter from "./icons/Twitter.astro";
+import {Icon} from "@astrojs/starlight/components";
+import {Image} from "astro:assets";
+import Code from "@/static/code.png";
+
 import Link from "./Link.astro";
 import {SITE_DATA} from "../consts";
+
 ---
-<section class="relative isolate bg-gray-50 dark:bg-gray-900 overflow-hidden">
-    <div aria-hidden="true"
-         class="absolute left-1/2 right-0 top-0 -z-10 -ml-24 transform-gpu overflow-hidden blur-3xl lg:ml-24 xl:ml-48">
-        <div class="aspect-[801/1036] w-[50.0625rem] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30"
-             style="clip-path: polygon(63.1% 29.5%, 100% 17.1%, 76.6% 3%, 48.4% 0%, 44.6% 4.7%, 54.5% 25.3%, 59.8% 49%, 55.2% 57.8%, 44.4% 57.2%, 27.8% 47.9%, 35.1% 81.5%, 0% 97.7%, 39.2% 100%, 35.2% 81.4%, 97.2% 52.8%, 63.1% 29.5%)"></div>
-    </div>
-    <div class="mx-auto flex max-w-7xl px-6 py-28 lg:px-8 lg:pt-32 md:min-h-[70vh]">
-        <div class="mx-auto w-full max-w-xl xl:max-w-3xl self-center text-center">
-            <h1 class="mt-2 text-4xl/[1.1] font-medium lg:text-6xl/[1.1] uppercase">
-                <span class="text-red-600">The email builder</span> your company needs
+
+<section class="hero bg-base-200">
+    <div class="hero-content flex-col lg:flex-row-reverse max-w-7xl mx-auto w-full py-10 md:py-20 justify-between">
+
+        <Image src={Code} widths={[1000, 800, 600]} class="w-1/2 hidden md:inline" alt="" />
+        <div class="flex flex-col gap-4">
+            <h1 class="text-3xl md:text-5xl uppercase font-bold md:leading-tight">
+                <span class="text-primary">An Open source</span> <br>
+                Email Template editor
             </h1>
-            <p class="relative mt-6 text-lg leading-8 sm:max-w-md lg:max-w-none">
-                A fully customizable email builder for Angular, integrated with MJML.
-                <Prism lang="ts" code={`
-// Import the abstract component
-import { AIPEmailBuilderComponent } from "@wlocalhost/ngx-email-builder"
-
-// Create your UI component, the logic is already done
-@Component({...})
-export class TailEmailBuilderComponent extends AIPEmailBuilderComponent {
-}
-                `}/>
+            <p class="py-4 text-lg">
+                A fully customizable open source email template editor for Angular, integrated with MJML, TailwindCSS and more.
             </p>
-            <h2 class="text-3xl mt-6 uppercase">Now <Link href={SITE_DATA.githubUrl} class="text-red-600"> 🔗 Open Source</Link></h2>
-            <div class="mt-10 flex items-center justify-center gap-x-6 flex-col md:flex-row gap-4">
-                <!--<a class="btn-primary" href="#" target="_blank">Let's have a chat 🧑🏻‍🏫</a>-->
-                <!--<a class="link" href="#features" target="_blank">-->
-                <!--    See some features <span class="sr-only">of NGB Email Builder</span> →-->
-                <!--</a>-->
-
-                <div class="flex gap-6 flex-col md:flex-row">
-                    <Link href={SITE_DATA.githubUrl} class="hover:opacity-80">
-                        <Github class="w-12 h-12"/>
+            <div class="flex flex-col md:flex-row gap-4 md:gap-2 items-start md:items-center">
+                <Link href="/guides" class="btn btn-primary">Read the guides</Link>
+                <div>
+                    <Link href={SITE_DATA.npmUrl} class="btn btn-ghost btn-circle">
+                        <Icon name="seti:npm" class="w-6 h-6"/>
                     </Link>
-                    <Link href={SITE_DATA.discordUrl} class="hover:opacity-80">
-                        <Discord class="w-12 h-12"/>
+                    <Link href={SITE_DATA.githubUrl} class="btn btn-ghost btn-circle">
+                        <Icon name="github" class="w-6 h-6"/>
                     </Link>
-                    <Link href={SITE_DATA.twitterUrl} class="hover:opacity-80">
-                        <Twitter class="w-12 h-12"/>
+                    <Link href={SITE_DATA.discordUrl} class="btn btn-ghost btn-circle">
+                        <Icon name="discord" class="w-6 h-6"/>
                     </Link>
-                    <!--<Discord class="w-12 h-12"/>-->
-                    <!--<Twitter class="w-12 h-12"/>-->
+                    <Link href={SITE_DATA.twitterUrl} class="btn btn-ghost btn-circle">
+                        <Icon name="x.com" class="w-6 h-6"/>
+                    </Link>
                 </div>
             </div>
         </div>

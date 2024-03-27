@@ -3,15 +3,17 @@ export const SITE_DATA = {
     description: 'Explore NGB Email Builder, an Angular library for devs & SaaS startups. Build responsive email templates with drag-and-drop, custom blocks, content API, and export as HTML or MJML.',
     shortDescription: 'Powerful Angular Library for Creating Customizable Email Builders',
     slogan: 'Made by Developers, for Developers',
-    baseUrl: 'https://ngb.email',
+
+
     docsUrl: 'https://docs.ngb.email',
     twitterUrl: 'https://twitter.com/NgbEmail',
     discordUrl: 'https://discord.gg/S6Yx6yNZSG',
     // affiliateUrl: 'https://wlocalhost.gumroad.com/affiliates',
     githubUrl: 'https://github.com/wanoo21/ngb.email',
     // licenseUrl: 'https://wlocalhost.gumroad.com/l/ngb-14',
-    npmUrl: 'https://www.npmjs.com/org/wlocalhost',
+    npmUrl: 'https://www.npmjs.com/package/@wlocalhost/ngx-email-builder',
     email: 'support@ngb.email',
+
     shortName: 'NGB Email Builder',
     showStickyCTA: false,
     ogImage: '/ngb-email-builder.png',

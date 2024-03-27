@@ -1,7 +1,7 @@
 ---
 import {Image} from "astro:assets";
-import {SITE_DATA, THEMES} from "../consts";
-import logo from '../static/logo.png';
+import {SITE_DATA, THEMES} from "@/consts";
+import logo from '@/static/logo-160.png';
 
 import Link from "./Link.astro";
 import Github from "./icons/Github.astro";
@@ -14,7 +14,7 @@ import Twitter from "./icons/Twitter.astro";
     <div class="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
         <div class="xl:grid xl:grid-cols-3 xl:gap-8">
             <div class="space-y-8">
-                <Image alt={SITE_DATA.shortName} class="h-10 w-10" width="40px" src={logo}/>
+                <Image alt={SITE_DATA.shortName} class="h-10 w-10" widths={[80, 160]} src={logo}/>
                 <p class="text-sm leading-6">{SITE_DATA.shortDescription}</p>
                 <div class="flex space-x-6">
                     <Link class="hover:opacity-80" href={SITE_DATA.twitterUrl}>
@@ -38,24 +38,8 @@ import Twitter from "./icons/Twitter.astro";
                     <h3 class="text-sm font-semibold leading-6">Support</h3>
                     <ul class="mt-6 space-y-4" role="list">
                         <li>
-                            <Link class="text-sm leading-6" href={SITE_DATA.docsUrl}>Documentation</Link>
-                        </li>
-                        <li>
                             <Link class="text-sm leading-6" href={SITE_DATA.npmUrl}>NPM Repository</Link>
                         </li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h3 class="text-sm font-semibold leading-6">Pre-built Themes</h3>
-                    <ul class="mt-6 space-y-4" role="list">
-                        {THEMES.map(({demoUrl, shortName}) => (
-                                <li>
-                                    <Link class="text-sm leading-6" href={demoUrl}>
-                                        {shortName}
-                                    </Link>
-                                </li>
-                        ))}
                     </ul>
                 </div>
                 <div>

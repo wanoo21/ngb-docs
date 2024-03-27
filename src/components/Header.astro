@@ -1,51 +1,76 @@
 ---
 import {Image} from "astro:assets"
 import {SITE_DATA} from "../consts";
-import logo from '../static/logo.png';
+import logo from '@/static/logo-160.png';
 
 import Link from "./Link.astro";
 ---
-<header class="absolute inset-x-0 z-10">
-    <nav aria-label="Global" class="mx-auto flex max-w-7xl items-center ga-4 p-6 lg:px-8">
-        <div class="flex">
-            <Link class="-m-1.5 p-1.5" href="/">
-                <span class="sr-only">{SITE_DATA.shortName}</span>
-                <Image alt={SITE_DATA.shortName} class="h-10 w-auto" width="40" src={logo} loading="eager"/>
+
+<header class="bg-base-100">
+    <div class="navbar max-w-7xl mx-auto w-full">
+        <div class="navbar-start">
+            <nav class="dropdown">
+                <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                         stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M4 6h16M4 12h8m-8 6h16"/>
+                    </svg>
+                </div>
+                <ul tabindex="0"
+                    class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                    <li>
+                        <Link href="/">Home</Link>
+                    </li>
+                    <li>
+                        <Link href="#themes">Themes</Link>
+                    </li>
+                    <li>
+                        <Link href="#features">Features</Link>
+                    </li>
+                    <li>
+                        <Link href="/guides">Guides</Link>
+                    </li>
+                    <!--<li>-->
+                    <!--    <a>Parent</a>-->
+                    <!--    <ul class="p-2">-->
+                    <!--        <li><a>Submenu 1</a></li>-->
+                    <!--        <li><a>Submenu 2</a></li>-->
+                    <!--    </ul>-->
+                    <!--</li>-->
+                </ul>
+            </nav>
+            <Image alt={SITE_DATA.shortName} class="h-10 w-auto" widths={[80, 160]} src={logo} loading="eager"/>
+        </div>
+        <nav class="navbar-center hidden lg:flex">
+            <ul class="menu menu-horizontal px-1">
+                <li>
+                    <Link href="/">Home</Link>
+                </li>
+                <li>
+                    <Link href="#themes">Themes</Link>
+                </li>
+                <li>
+                    <Link href="#features">Features</Link>
+                </li>
+                <li>
+                    <Link href="/guides">Guides</Link>
+                </li>
+                <!--<li>-->
+                <!--    <details>-->
+                <!--        <summary>Parent</summary>-->
+                <!--        <ul class="p-2">-->
+                <!--            <li><a>Submenu 1</a></li>-->
+                <!--            <li><a>Submenu 2</a></li>-->
+                <!--        </ul>-->
+                <!--    </details>-->
+                <!--</li>-->
+            </ul>
+        </nav>
+        <div class="navbar-end">
+            <Link class="text-sm font-semibold leading-6 text-primary" href={SITE_DATA.discordUrl} target="_blank">
+                Join the community →
             </Link>
         </div>
-        <!--<div class="flex lg:hidden">-->
-        <!--    <button class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700" type="button"-->
-        <!--            id="mobile-menu-btn">-->
-        <!--        <span class="sr-only">Open main menu</span>-->
-        <!--        <svg aria-hidden="true" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.5"-->
-        <!--             viewBox="0 0 24 24">-->
-        <!--            <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round"-->
-        <!--                  stroke-linejoin="round"/>-->
-        <!--        </svg>-->
-        <!--    </button>-->
-        <!--</div>-->
-        <div class="hidden lg:flex lg:gap-x-12 lg:flex-1 justify-center">
-            <Link class="font-light leading-6" href="/">
-                Home
-            </Link>
-            <Link class="font-light leading-6" href="#features">
-                Features
-            </Link>
-            <Link class="font-light leading-6" href="#themes">
-                Templates
-            </Link>
-            <!--<a class="text-sm font-semibold leading-6" href="#faq">-->
-            <!--    FAQ-->
-            <!--</a>-->
-            <Link class="font-light leading-6" rel="prefetch" href={SITE_DATA.docsUrl}>
-                Documentation
-            </Link>
-        </div>
-        <div class="hidden lg:flex lg:justify-end">
-            <Link class="text-sm font-semibold leading-6 text-red-600" href={SITE_DATA.discordUrl} target="_blank">
-                Join Our Discord →
-            </Link>
-        </div>
-    </nav>
-    <!--{{> header/mobile-nav}}-->
+    </div>
 </header>
