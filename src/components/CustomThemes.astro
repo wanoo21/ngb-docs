@@ -9,10 +9,10 @@ import Bulma from "./icons/Bulma.astro";
 
 <section class="py-20" class:list={Astro.props.class}>
     <div class="flex flex-col gap-10 max-w-7xl mx-auto w-full">
-        <h2 class="text-3xl md:text-4xl font-bold capitalize">
+        <h2 class="text-3xl md:text-4xl font-bold capitalize  px-6 lg:px-8">
             Ready for Your <span class="text-primary">Custom Theme?</span>
         </h2>
-        <div class="flex flex-col w-full border-opacity-50 gap-6">
+        <div class="flex flex-col w-full border-opacity-50 gap-6  px-6 lg:px-8">
             <p class="text-lg md:text-xl">
                 Follow the instructions from the
                 <Link class="link-primary" href="/guides/getting-started">documentation</Link>
@@ -21,6 +21,7 @@ import Bulma from "./icons/Bulma.astro";
             <div class="divider divider-start">OR</div>
             <div class="flex gap-14 flex-wrap items-center">
                 <h3 class="text-lg md:text-xl">Choose a pre-built theme:</h3>
+                <span class="block lg:hidden"></span>
                 <button class="btn btn-circle btn-link btn-lg tooltip text-[#06B6D4]"
                         data-tip="Tailwind theme (included in main repo)">
                     <Tailwind/>
