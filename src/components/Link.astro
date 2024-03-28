@@ -10,7 +10,7 @@ const isAnchorLink = href?.toString().startsWith('#')
 
 if (!isInternalLink && !isAnchorLink && href) {
     href = new URL(href);
-    href.searchParams.append('ref', Astro.site);
+    href.searchParams.append('ref', Astro.site!.host);
 }
 
 ---

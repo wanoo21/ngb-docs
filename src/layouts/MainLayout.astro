@@ -10,7 +10,7 @@ interface Props {
   class?: string;
 }
 
-const {shortName, twitterUrl, ogImage} = SITE_DATA;
+const {twitterUrl, ogImage} = SITE_DATA;
 
 const {title = SITE_DATA.title, description = SITE_DATA.description} = Astro.props;
 const canonical = new URL(Astro.request.url, Astro.url);
@@ -25,7 +25,7 @@ const canonical = new URL(Astro.request.url, Astro.url);
     <title>{title}</title>
     <meta content={description} name="description"/>
 
-    <meta content={shortName} property="og:site_name"/>
+    <!--<meta content={shortName} property="og:site_name"/>-->
     <meta content="website" property="og:type"/>
     <meta content={title} property="og:title"/>
     <meta content={description} property="og:description"/>
