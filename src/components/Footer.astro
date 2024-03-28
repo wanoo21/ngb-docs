@@ -6,8 +6,9 @@ import Link from "./Link.astro";
 
 <footer class="footer footer-center p-10 bg-primary text-primary-content rounded">
     <nav class="grid grid-flow-col gap-4">
-        <Link class="link link-hover">About us</Link>
-        <Link class="link link-hover" href="mailto:me@yon.fun">Contact</Link>
+        <Link>About us (in progress)</Link>
+        <Link href={`mailto:${SITE_DATA.email}?subject=Contact%20from%20${SITE_DATA.title}`}>Contact</Link>
+        <!--<Link class="link link-hover">Store</Link>-->
     </nav>
     <nav>
         <div class="grid grid-flow-col gap-4">
@@ -19,6 +20,9 @@ import Link from "./Link.astro";
             </Link>
             <Link class="link link-hover" href={SITE_DATA.discordUrl}>
                 <Icon name="discord" class="w-6 h-6"/>
+            </Link>
+            <Link class="link link-hover" href={SITE_DATA.npmUrl}>
+                <Icon name="seti:npm" class="w-6 h-6"/>
             </Link>
         </div>
     </nav>

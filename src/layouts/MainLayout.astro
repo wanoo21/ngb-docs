@@ -47,7 +47,7 @@ const canonical = new URL(Astro.request.url, Astro.url);
 </head>
 <body class="bg-base-100 text-base-content">
 <Header/>
-<main class:list={Astro.props.class}>
+<main class:list={Astro.props.class} class="z-0">
     <slot/>
 </main>
 <Footer/>

@@ -3,7 +3,7 @@ import Link from "./Link.astro";
 import {Icon} from "@astrojs/starlight/components";
 ---
 
-<section class="bg-base-100 py-20" id="features">
+<section class="bg-base-100 py-20" id="blocks" class:list={Astro.props.class}>
     <div class="mx-auto max-w-7xl px-6 lg:px-8 flex flex-col gap-10 w-full">
         <div>
             <h2 class="text-base font-semibold leading-7 text-primary capitalize">
@@ -13,8 +13,8 @@ import {Icon} from "@astrojs/starlight/components";
                 All the blocks you need
             </p>
             <p class="mt-6 text-lg leading-8">
-                We have created a <Link class="link link-primary" href="/guides/default-blocks/">set of blocks</Link> that are beautiful and functional. These blocks can be used to create a
-                beautiful email template. Each block has been carefully designed to look great on all devices and screen sizes.
+                We have created a <Link class="link-primary" href="/guides/default-blocks/">set of beautiful and functional blocks</Link> that can be used to create an attractive email template.
+                Each block has been designed to look great on all devices and screen sizes.
             </p>
         </div>
         <div class="flex-wrap gap-14 justify-between hidden lg:flex">
@@ -80,8 +80,8 @@ import {Icon} from "@astrojs/starlight/components";
         </div>
 
         <p class="lg:mt-6 text-lg leading-8">
-            You can use these blocks to create a beautiful email template in minutes. Simply drag and drop the blocks into your email template and customize them to fit your brand.
-            Oh, and did we mention that you can create your own blocks too? <Link class="link link-primary" href="/guides/blocks/custom-block/">Learn more</Link>.
+            These blocks can be used to create a beautiful email template in minutes. Simply drag and drop the blocks into your template and customize them to fit your brand.
+            Oh, and did we mention that you can create your own blocks, too? <Link class="link-primary" href="/guides/blocks/custom-block/">Learn more</Link>.
         </p>
     </div>
 </section>

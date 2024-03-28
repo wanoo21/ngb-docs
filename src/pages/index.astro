@@ -3,15 +3,18 @@ import MainLayout from "../layouts/MainLayout.astro";
 import Hero from "../components/Hero.astro";
 import Features from "../components/Features.astro";
 import DefinedThemes from "../components/DefinedThemes.astro";
+import HowItWorks from "../components/HowItWorks.astro";
+// import Stats from "../components/Stats.astro";
+import CustomThemes from "../components/CustomThemes.astro";
+import CustomWork from "../components/CustomWork.astro";
 ---
 
-<MainLayout class="divide-y">
+<MainLayout class="">
     <Hero/>
-    <Features/>
+    <Features class="bg-base-100"/>
     <DefinedThemes class="bg-base-200"/>
-    <section class="p-4 text-center">
-        <p>
-            This page is still under construction. Please check back later.
-        </p>
-    </section>
+    <HowItWorks class="bg-base-100"/>
+    <CustomThemes class="bg-base-200"/>
+    <!--<Stats/>-->
+    <CustomWork class="bg-base-100"/>
 </MainLayout>

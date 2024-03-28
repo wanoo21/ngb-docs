@@ -1,12 +1,10 @@
 ---
 import {Image} from "astro:assets"
 import {SITE_DATA} from "../consts";
-import logo from '@/static/logo-160.png';
-
-import Link from "./Link.astro";
+import logo from '@/static/logo-260-white.png';
 ---
 
-<header class="bg-base-100">
+<header class="bg-primary text-primary-content sticky top-0 z-10 shadow-md">
     <div class="navbar max-w-7xl mx-auto w-full">
         <div class="navbar-start">
             <nav class="dropdown">
@@ -20,16 +18,19 @@ import Link from "./Link.astro";
                 <ul tabindex="0"
                     class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
                     <li>
-                        <Link href="/">Home</Link>
+                        <a href="#blocks">Blocks</a>
                     </li>
                     <li>
-                        <Link href="#themes">Themes</Link>
+                        <a href="#email-templates">Email Templates</a>
                     </li>
                     <li>
-                        <Link href="#features">Features</Link>
+                        <a href="#how-it-works">How It Works</a>
                     </li>
                     <li>
-                        <Link href="/guides">Guides</Link>
+                        <a href="#custom-themes">Custom Themes</a>
+                    </li>
+                    <li>
+                        <a href="/guides">Guides</a>
                     </li>
                     <!--<li>-->
                     <!--    <a>Parent</a>-->
@@ -40,21 +41,26 @@ import Link from "./Link.astro";
                     <!--</li>-->
                 </ul>
             </nav>
-            <Image alt={SITE_DATA.shortName} class="h-10 w-auto" widths={[80, 160]} src={logo} loading="eager"/>
+            <a href="/">
+                <Image alt="Logo" class="h-10 w-auto" widths={[80, 160]} src={logo} loading="eager"/>
+            </a>
         </div>
         <nav class="navbar-center hidden lg:flex">
             <ul class="menu menu-horizontal px-1">
                 <li>
-                    <Link href="/">Home</Link>
+                    <a href="#blocks">Blocks</a>
                 </li>
                 <li>
-                    <Link href="#themes">Themes</Link>
+                    <a href="#email-templates">Email Templates</a>
                 </li>
                 <li>
-                    <Link href="#features">Features</Link>
+                    <a href="#how-it-works">How It Works</a>
                 </li>
                 <li>
-                    <Link href="/guides">Guides</Link>
+                    <a href="#custom-themes">Custom Themes</a>
+                </li>
+                <li>
+                    <a href="/guides">Guides</a>
                 </li>
                 <!--<li>-->
                 <!--    <details>-->
@@ -68,9 +74,9 @@ import Link from "./Link.astro";
             </ul>
         </nav>
         <div class="navbar-end">
-            <Link class="text-sm font-semibold leading-6 text-primary" href={SITE_DATA.discordUrl} target="_blank">
+            <a class="text-sm font-semibold leading-6" href={SITE_DATA.discordUrl} target="_blank">
                 Join the community →
-            </Link>
+            </a>
         </div>
     </div>
 </header>

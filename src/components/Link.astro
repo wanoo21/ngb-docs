@@ -3,18 +3,24 @@ import type {HTMLAttributes} from "astro/types";
 
 type Props = HTMLAttributes<'a'>
 
-const {href, ...rest} = Astro.props;
+let {href, ...rest} = Astro.props;
 
-const isInternalLink = href && href.toString().startsWith('/')
-const isAnchorLink = href && href.toString().startsWith('#')
+const isInternalLink = href?.toString().startsWith('/')
+const isAnchorLink = href?.toString().startsWith('#')
+
+if (!isInternalLink && !isAnchorLink && href) {
+    href = new URL(href);
+    href.searchParams.append('ref', Astro.site);
+}
+
 ---
 
 {
     (isInternalLink || isAnchorLink) ?
-    <a href={href} {...rest}>
+    <a href={href} {...rest} class="link link-hover">
         <slot/>
     </a> :
-    <a target="_blank" rel="noopener noreferrer" href={href} {...rest}>
+    <a target="_blank" rel="noopener noreferrer" href={href} {...rest} class="link link-hover">
         <slot/>
     </a>
     }

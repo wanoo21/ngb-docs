@@ -1,0 +1,19 @@
+---
+import {SITE_DATA} from "../consts";
+---
+
+<section class="py-20" id="custom-themes" class:list={Astro.props.class}>
+    <div class="flex flex-col gap-10 max-w-7xl mx-auto w-full">
+        <div class="space-y-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold capitalize">
+                This seems too <span class="text-primary">complicated</span> for me
+            </h2>
+            <p class="text-lg md:text-xl">
+                Don't worry, I've got you covered. I can help you with your project, from start to finish.
+            </p>
+            <p class="text-lg md:text-xl">
+                <a href={`mailto:${SITE_DATA.email}?subject=I need help with my project&body=Hi, I need help with my project. Can you help me?`} class="btn btn-primary btn-wide">Let's talk about it!</a>
+            </p>
+        </div>
+    </div>
+</section>

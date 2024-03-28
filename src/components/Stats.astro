@@ -1,0 +1,64 @@
+---
+import {Octokit} from "octokit";
+
+// https://docs.github.com/en/rest/metrics/statistics?apiVersion=2022-11-28#about-repository-statistics
+const stats = await new Octokit().request('GET /repos/{owner}/{repo}/stats/commit_activity', {
+    owner: 'wanoo21',
+    repo: 'ngb.email'
+}).then(({data}) => {
+    console.log(data);
+    return data;
+});
+
+console.log(stats);
+---
+
+<section class="py-20" class:list={Astro.props.class}>
+    <div class="flex flex-col gap-10 max-w-7xl mx-auto w-full">
+        <div class="space-y-4">
+            <h2 class="text-3xl md:text-4xl font-bold capitalize">
+                Let's see some stats, shall we?
+            </h2>
+            <p class="text-lg md:text-xl">
+                Here are some stats from Angular application that we have been working on. It's automatically pulled from GitHub and updated live.
+            </p>
+            <div class="stats w-full p-10">
+
+                <div class="stat place-items-center">
+                    <div class="stat-title">Downloads</div>
+                    <div class="stat-value">31K</div>
+                    <div class="stat-desc">From January 1st to February 1st</div>
+                </div>
+
+                <div class="stat place-items-center">
+                    <div class="stat-title">Users</div>
+                    <div class="stat-value text-secondary">4,200</div>
+                    <div class="stat-desc text-secondary">↗︎ 40 (2%)</div>
+                </div>
+
+                <div class="stat place-items-center">
+                    <div class="stat-title">New Registers</div>
+                    <div class="stat-value">1,200</div>
+                    <div class="stat-desc">↘︎ 90 (14%)</div>
+                </div>
+
+                <div class="stat place-items-center">
+                    <div class="stat-title">New Registers</div>
+                    <div class="stat-value">1,200</div>
+                    <div class="stat-desc">↘︎ 90 (14%)</div>
+                </div>
+
+                <div class="stat place-items-center">
+                    <div class="stat-title">New Registers</div>
+                    <div class="stat-value">1,200</div>
+                    <div class="stat-desc">↘︎ 90 (14%)</div>
+                </div>
+
+            </div>
+
+            <p class="text-lg md:text-xl">
+                Go and add some ⭐️ (stars) to Angular application and Convertor, and help us grow! 🚀 Contributions are always welcome! 🙏
+            </p>
+        </div>
+    </div>
+</section>

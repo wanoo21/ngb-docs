@@ -1,28 +1,29 @@
 ---
 import {allThemes} from "../themes";
+import {Image} from "astro:assets";
+import Link from "./Link.astro";
 ---
 
-<section class="py-20" id="themes" class:list={Astro.props.class}>
-    <div class="mx-auto max-w-7xl px-6 lg:px-8 flex flex-col gap-10 w-full">
-        <div class="text-center">
+<section class="py-20" id="email-templates" class:list={Astro.props.class}>
+    <div class="flex flex-col gap-10 w-full">
+        <div class="text-center mx-auto max-w-7xl px-6 lg:px-8">
             <h2 class="text-base font-semibold leading-7 text-primary capitalize">
-                Themes
+                Email Templates
             </h2>
             <p class="mt-2 text-3xl font-bold tracking-tight sm:text-4xl capitalize">
-                Beautiful and functional templates
+                Beautiful and Functional Email Templates
             </p>
             <p class="mt-6 text-lg leading-8">
-                We have a wide range of templates that are easy to use and customize. Our templates are designed to look great on all devices and are easy to integrate and manage.
+                A set of email templates that your customers will love. They can auto-import within Angular applications and are fully customizable. You can use them as they are or modify them to suit your needs.
             </p>
         </div>
-        <div class="flex flex-wrap gap-4 justify-center">
-            {allThemes().splice(8).map((theme) => (
-              <div class="bg-base-100 shadow-lg rounded-lg overflow-hidden min-w-72 border h-96">
-                  <div class="relative">
-                      <img class="w-full h-96 object-cover object-top" src={theme.url} alt="" />
-                      <div class="absolute top-0 right-0 bg-primary text-white px-3 py-1 rounded-bl-lg">
-                          Free
-                      </div>
+        <div class="carousel carousel-center p-4 space-x-4 w-full">
+            {allThemes().map((theme) => (
+              <div class="carousel-item shadow-lg rounded-lg min-w-80 relative overflow-hidden">
+                  <Image class="w-80 h-96 object-cover object-top rounded-md" height="384" width="380" src={theme.url} alt={theme.category} />
+                  <div class="absolute top-0 right-0 bg-primary text-white px-3 py-1 rounded-bl-lg">
+                      Free
+                  </div>
                   <div class="p-6 absolute bottom-0 bg-base-100/90 left-0 right-0">
                       <h3 class="text-xl font-semibold leading-7 text-primary capitalize">
                           {theme.category}
@@ -36,18 +37,12 @@ import {allThemes} from "../themes";
                       <!--    </Link>-->
                       <!--</div>-->
                   </div>
-                  </div>
+
               </div>
             ))}
         </div>
-        <!--<div class="text-center mt-10">-->
-        <!--    <Link href="/themes" class="text-primary hover:text-primary-dark">-->
-        <!--        View all themes-->
-        <!--    </Link>-->
-        <!--</div>-->
-
-        <p class="mt-6 text-lg leading-8">
-            And yet, more to come! Stay tuned for more themes and updates. We are constantly working on new themes and updates to make your experience better. If you have any suggestions or feedback, feel free to reach out to us.
+        <p class="mx-auto max-w-7xl px-6 lg:px-8 mt-6 text-lg leading-8">
+            And yet, there is more to come! Stay tuned for more themes and updates. We are constantly working on new themes and updates to improve your experience. If you have any suggestions or feedback, feel free to contact us.
         </p>
     </div>
 </section>
