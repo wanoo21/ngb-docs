@@ -10,6 +10,32 @@ import Bootstrap from "./icons/Bootstrap.astro";
 import Material from "./icons/Material.astro";
 import Bulma from "./icons/Bulma.astro";
 import Primeng from "./icons/Primeng.astro";
+
+
+// if (Astro.request.method === 'POST') {
+//   try {
+//     //  Notify me when new themes are available
+//     const data = await Astro.request.formData();
+//     if (data.get('email')) {
+//       const subscribe = await fetch('https://yon.fun/members/api/send-magic-link/', {
+//         method: 'POST',
+//         headers: {
+//           'Content-Type': 'application/json',
+//         },
+//         body: JSON.stringify({
+//           email: data.get('email'),
+//           emailType: 'signup',
+//           name: '',
+//           labels: ['ngb.email'],
+//           urlHistory: [],
+//         }),
+//       });
+//       console.log(subscribe.status, subscribe.statusText);
+//     }
+//   } catch (e) {
+//     console.error(e);
+//   }
+// }
 ---
 
 <section class="hero bg-primary-content/15">
@@ -21,7 +47,8 @@ import Primeng from "./icons/Primeng.astro";
                 Email Template editor
             </h1>
             <p class="py-4 text-lg">
-                A fully customizable wysiwyg open source email template editor for Angular, integrated with MJML, TailwindCSS
+                A fully customizable wysiwyg open source email template editor for Angular, integrated with MJML,
+                TailwindCSS
                 and more. Drag and drop, resize, duplicate, delete, move, export to HTML, MJML, JSON and more.
             </p>
             <div class="flex flex-col md:flex-row gap-4 md:gap-2 items-start md:items-center">
@@ -45,7 +72,7 @@ import Primeng from "./icons/Primeng.astro";
     </div>
 </section>
 
-<section class="p-10">
+<section class="p-10 border-b">
     <div class="flex flex-col justify-center lg:items-center max-w-7xl mx-auto w-full gap-8">
         <h2>With <span class="text-primary">Pre-Built Themes</span> that you will love!</h2>
         <div class="flex gap-14 flex-wrap">
@@ -67,6 +94,11 @@ import Primeng from "./icons/Primeng.astro";
             <button class="btn btn-circle btn-link btn-lg tooltip" data-tip="Primeng theme (coming soon)">
                 <Primeng/>
             </button>
+        </div>
+
+        <div class="flex flex-col gap-2 w-full max-w-md">
+            <h2 class="text-gray-400 text-center">Get notified when custom themes are available</h2>
+            <script src="https://cdn.jsdelivr.net/ghost/signup-form@~0.1/umd/signup-form.min.js" data-label-1="ngb.email" data-button-color="#b51a00" data-button-text-color="#FFFFFF" data-site="https://yon.fun/" async></script>
         </div>
     </div>
 </section>
