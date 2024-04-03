@@ -9,7 +9,11 @@ module.exports = {
                 ...require("daisyui/src/theming/themes")["light"],
                 primary: "#b51a00",
             },
-        }, 'dark'],
+            dark: {
+                ...require("daisyui/src/theming/themes")["dark"],
+                primary: "#b51a00",
+            },
+        }],
     },
     plugins: [require('daisyui')],
 }

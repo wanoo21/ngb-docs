@@ -1,7 +1,7 @@
 {
-  "name": "NGB Email Builder",
+  "name": "NGB",
   "short_name": "NGB",
-  "theme_color": "#dc2626",
+  "theme_color": "#b51a00",
   "background_color": "#fff",
   "display": "browser",
   "orientation": "any",
