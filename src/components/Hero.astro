@@ -10,35 +10,9 @@ import Bootstrap from "./icons/Bootstrap.astro";
 import Material from "./icons/Material.astro";
 import Bulma from "./icons/Bulma.astro";
 import Primeng from "./icons/Primeng.astro";
-
-
-// if (Astro.request.method === 'POST') {
-//   try {
-//     //  Notify me when new themes are available
-//     const data = await Astro.request.formData();
-//     if (data.get('email')) {
-//       const subscribe = await fetch('https://yon.fun/members/api/send-magic-link/', {
-//         method: 'POST',
-//         headers: {
-//           'Content-Type': 'application/json',
-//         },
-//         body: JSON.stringify({
-//           email: data.get('email'),
-//           emailType: 'signup',
-//           name: '',
-//           labels: ['ngb.email'],
-//           urlHistory: [],
-//         }),
-//       });
-//       console.log(subscribe.status, subscribe.statusText);
-//     }
-//   } catch (e) {
-//     console.error(e);
-//   }
-// }
 ---
 
-<section class="hero bg-primary-content/15">
+<section class="hero bg-primary-content/15 dark:bg-base-200">
     <div class="hero-content flex-col lg:flex-row-reverse max-w-7xl mx-auto w-full py-10 md:py-20 justify-between">
         <Image src={Code} widths={[1000, 800, 600]} class="w-1/2 hidden lg:inline" alt=""/>
         <div class="flex flex-col gap-4">
@@ -72,28 +46,28 @@ import Primeng from "./icons/Primeng.astro";
     </div>
 </section>
 
-<section class="p-10 border-b">
+<section class="p-10 border-b dark:border-base-300">
     <div class="flex flex-col justify-center lg:items-center max-w-7xl mx-auto w-full gap-8">
         <h2>With <span class="text-primary">Pre-Built Themes</span> that you will love!</h2>
         <div class="flex gap-14 flex-wrap">
-            <button class="btn btn-circle btn-link btn-lg tooltip text-[#06B6D4]"
+            <a href="/tailwind" class="btn btn-circle btn-link btn-lg tooltip text-[#06B6D4]"
                     data-tip="Tailwind theme (included in main repo)">
                 <Tailwind/>
-            </button>
-            <button class="btn btn-circle btn-link btn-lg tooltip text-[#7952B3]"
-                    data-tip="Bootstrap theme (coming soon)">
+            </a>
+            <a href="/bootstrap" class="btn btn-circle btn-link btn-lg tooltip text-[#7952B3]"
+               data-tip="Bootstrap theme">
                 <Bootstrap/>
-            </button>
-            <button class="btn btn-circle btn-link btn-lg tooltip text-[#757575]"
-                    data-tip="Material theme (coming soon)">
+            </a>
+            <a href="/material" class="btn btn-circle btn-link btn-lg tooltip text-[#757575]"
+                    data-tip="Material theme">
                 <Material/>
-            </button>
-            <button class="btn btn-circle btn-link btn-lg tooltip text-[#00D1B2]" data-tip="Bulma theme (coming soon)">
+            </a>
+            <a href="/bulma" class="btn btn-circle btn-link btn-lg tooltip text-[#00D1B2]" data-tip="Bulma theme">
                 <Bulma/>
-            </button>
-            <button class="btn btn-circle btn-link btn-lg tooltip" data-tip="Primeng theme (coming soon)">
+            </a>
+            <a href="/primeng" class="btn btn-circle btn-link btn-lg tooltip" data-tip="Primeng theme">
                 <Primeng/>
-            </button>
+            </a>
         </div>
     </div>
 </section>

@@ -22,25 +22,26 @@ import Bulma from "./icons/Bulma.astro";
             <div class="flex gap-14 flex-col md:flex-row flex-wrap md:items-center">
                 <h3 class="text-lg md:text-xl">Choose a pre-built theme:</h3>
                 <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-y-14 md:gap-x-14">
-                    <button class="btn btn-circle btn-link btn-lg tooltip text-[#06B6D4]"
-                            data-tip="Tailwind theme (included in main repo)">
+                    <a href="/tailwind" class="btn btn-circle btn-link btn-lg tooltip text-[#06B6D4]"
+                       data-tip="Tailwind theme (included in main repo)">
                         <Tailwind/>
-                    </button>
-                    <button class="btn btn-circle btn-link btn-lg tooltip text-[#7952B3]"
-                            data-tip="Bootstrap theme (coming soon)">
+                    </a>
+                    <a href="/bootstrap" class="btn btn-circle btn-link btn-lg tooltip text-[#7952B3]"
+                       data-tip="Bootstrap theme">
                         <Bootstrap/>
-                    </button>
-                    <button class="btn btn-circle btn-link btn-lg tooltip text-[#757575]"
-                            data-tip="Material theme (coming soon)">
+                    </a>
+                    <a href="/material" class="btn btn-circle btn-link btn-lg tooltip text-[#757575]"
+                       data-tip="Material theme">
                         <Material/>
-                    </button>
-                    <button class="btn btn-circle btn-link btn-lg tooltip text-[#00D1B2]"
-                            data-tip="Bulma theme (coming soon)">
+                    </a>
+                    <a href="/bulma" class="btn btn-circle btn-link btn-lg tooltip text-[#00D1B2]"
+                       data-tip="Bulma theme">
                         <Bulma/>
-                    </button>
-                    <button class="btn btn-circle btn-link md:btn-lg tooltip" data-tip="Primeng theme (coming soon)">
+                    </a>
+                    <a href="/primeng" class="btn btn-circle btn-link md:btn-lg tooltip"
+                       data-tip="Primeng theme">
                         <Primeng/>
-                    </button>
+                    </a>
                 </div>
             </div>
         </div>

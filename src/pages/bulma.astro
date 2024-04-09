@@ -1,0 +1,44 @@
+---
+import {Image} from "astro:assets";
+import Bt from "@/static/bulma.png";
+
+import DefinedThemes from "../components/DefinedThemes.astro";
+import CustomThemes from "../components/CustomThemes.astro";
+import HowItWorks from "../components/HowItWorks.astro";
+import Features from "../components/Features.astro";
+import CustomWork from "../components/CustomWork.astro";
+import MainLayout from "../layouts/MainLayout.astro";
+import CustomHero from "../components/CustomHero.astro";
+// import Link from "../components/Link.astro";
+---
+
+<MainLayout
+        title="Bulma Email Template Builder"
+        description="A WYSIWYG email template builder based on Angular and Bulma. Create responsive email templates with a drag-and-drop interface."
+>
+    <CustomHero theme="bulma">
+        <Fragment slot="header">
+            Bulma Email <br> <span class="text-primary">Template Editor</span>
+        </Fragment>
+        <Fragment slot="summary">
+            A WYSIWYG email template builder based on <span class="text-primary">Angular and Bulma.</span>
+            Start creating responsive email templates with a drag-and-drop interface, export to HTML, and use it with your favorite email service provider.
+        </Fragment>
+        <Fragment slot="actions">
+            <button class="btn btn-primary tooltip" data-tip="Coming Soon">
+                Buy Now
+            </button>
+            <button class="btn btn-ghost tooltip" data-tip="Coming Soon">
+                Try Demo
+            </button>
+        </Fragment>
+        <Image src={Bt} widths={[1000, 800, 600]} class="w-1/2 hidden lg:inline rounded-lg shadow-md"
+               alt="Bulma Email Editor" slot="image"/>
+    </CustomHero>
+    <Features class="bg-base-100"/>
+    <DefinedThemes class="bg-base-200"/>
+    <HowItWorks class="bg-base-100"/>
+    <CustomThemes class="bg-base-200"/>
+    <!--<Stats/>-->
+    <CustomWork class="bg-base-100"/>
+</MainLayout>

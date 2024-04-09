@@ -1,0 +1,91 @@
+---
+import Tailwind from "./icons/Tailwind.astro";
+import Bootstrap from "./icons/Bootstrap.astro";
+import Material from "./icons/Material.astro";
+import Bulma from "./icons/Bulma.astro";
+import Primeng from "./icons/Primeng.astro";
+
+type Props = {
+  theme: 'tailwind' | 'bootstrap' | 'material' | 'bulma' | 'primeng';
+}
+
+const {theme} = Astro.props;
+---
+
+<section class="hero bg-primary-content/15 dark:bg-base-200">
+    <div class="hero-content flex-col gap-4 lg:flex-row-reverse max-w-7xl mx-auto w-full py-10 md:py-20 justify-between">
+        <slot name="image"/>
+        <div class="flex flex-col gap-4">
+            <h1 class="text-3xl md:text-5xl uppercase font-bold md:leading-tight">
+                <slot name="header"/>
+            </h1>
+            <p class="py-4 text-lg text-balance">
+                <slot name="summary"/>
+            </p>
+            <div class="flex flex-col md:flex-row gap-4 md:gap-2 items-start md:items-center">
+                <slot name="actions"/>
+            </div>
+            <div class="rounded-md bg-base-100 p-4 space-y-1">
+              {theme == 'tailwind' ?
+                      <p>This is a free and open-source project.</p>
+                      <p>Credit is appreciated but not required.</p>
+                      <p>Feel free to use it for personal or commercial projects.</p>
+                :
+                      <p><strong>One Time Purchase. Lifetime Updates.</strong></p>
+                      <p>Full repo access, updates, and support for a single purchase.</p>
+                      <p>No recurring fees.</p>
+              }
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="p-10">
+    <div class="max-w-7xl mx-auto w-full">
+        <p class="text-lg text-balance text-center alert rounded-md bg-base-200 rounded-md">
+            This email template builder isn't a fully-fledged UI/UX tool. My primary focus was on the code structure and
+            the underlying logic of the builder. However, it's designed to be easily customizable to suit your UI/UX
+            needs. Consider it as a starting point or a boilerplate for your upcoming projects.
+        </p>
+    </div>
+</section>
+
+<section class="p-10 border-b dark:border-base-200">
+    <div class="flex flex-col justify-center lg:items-center max-w-7xl mx-auto w-full gap-8">
+        <h2 class="capitalize">
+            Interested in <span class="text-primary">another theme?</span>
+        </h2>
+        <div class="flex gap-14 flex-wrap">
+          {theme === 'tailwind' ? '' :
+                  <a href="/tailwind" class="btn btn-circle btn-link btn-lg tooltip text-[#06B6D4]"
+                     data-tip="Tailwind theme">
+                      <Tailwind/>
+                  </a>
+          }
+          {theme === 'bootstrap' ? '' :
+                  <a href="/bootstrap" class="btn btn-circle btn-link btn-lg tooltip text-[#7952B3]"
+                     data-tip="Bootstrap theme">
+                      <Bootstrap/>
+                  </a>
+          }
+          {theme === 'material' ? '' :
+                  <a href="/material" class="btn btn-circle btn-link btn-lg tooltip text-[#757575]"
+                     data-tip="Material theme">
+                      <Material/>
+                  </a>
+          }
+          {theme === 'bulma' ? '' :
+                  <a href="/bulma" class="btn btn-circle btn-link btn-lg tooltip text-[#00D1B2]"
+                     data-tip="Bulma theme">
+                      <Bulma/>
+                  </a>
+          }
+          {theme === 'primeng' ? '' :
+                  <a href="/primeng" class="btn btn-circle btn-link btn-lg tooltip"
+                     data-tip="Primeng theme">
+                      <Primeng/>
+                  </a>
+          }
+        </div>
+    </div>
+</section>

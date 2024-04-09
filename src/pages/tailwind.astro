@@ -1,0 +1,44 @@
+---
+import {Image} from "astro:assets";
+import Bt from "@/static/bt.png";
+
+import DefinedThemes from "../components/DefinedThemes.astro";
+import CustomThemes from "../components/CustomThemes.astro";
+import HowItWorks from "../components/HowItWorks.astro";
+import Features from "../components/Features.astro";
+import CustomWork from "../components/CustomWork.astro";
+import MainLayout from "../layouts/MainLayout.astro";
+import CustomHero from "../components/CustomHero.astro";
+---
+
+<MainLayout
+        title="Tailwind Email Template Builder"
+        description="A WYSIWYG email template builder based on Angular and Tailwind CSS. Create responsive email templates with a drag-and-drop interface."
+>
+    <CustomHero theme="tailwind">
+        <Fragment slot="header">
+            Tailwind Email <span class="text-primary">Template Builder</span>
+        </Fragment>
+        <Fragment slot="summary">
+            A WYSIWYG email template builder based on <span class="text-primary">Angular and Tailwind CSS.</span>
+            Jump-start your email marketing campaigns with responsive email templates, or create your own custom themes.
+        </Fragment>
+        <Fragment slot="actions">
+            <a href="https://github.com/wanoo21/ngb.email/tree/main/libs/tailwind-email-builder" target="_blank"
+               class="btn btn-primary">
+                View on GitHub
+            </a>
+            <button class="btn btn-ghost tooltip" data-tip="Coming Soon">
+                Try Demo
+            </button>
+        </Fragment>
+        <Image src={Bt} widths={[1000, 800, 600]} class="w-1/2 hidden lg:inline rounded-lg shadow-md"
+               alt="Tailwind Email Editor" slot="image"/>
+    </CustomHero>
+    <Features class="bg-base-100"/>
+    <DefinedThemes class="bg-base-200"/>
+    <HowItWorks class="bg-base-100"/>
+    <CustomThemes class="bg-base-200"/>
+    <!--<Stats/>-->
+    <CustomWork class="bg-base-100"/>
+</MainLayout>
